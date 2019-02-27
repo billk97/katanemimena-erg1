@@ -1,17 +1,15 @@
 package ClientServer;
 
-import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-public class Client implements Runnable{
+public class NewClient {
     String threadName;
-    public Client(String Name){
+    public NewClient(String Name){
         threadName=Name;
     }
 
-    @Override
     public void run() {
         connect();
 
@@ -23,7 +21,7 @@ public class Client implements Runnable{
             {
                 Thread.sleep(1000);
                 /**makes a connection to the server**/
-                MyClient = new Socket("192.168.1.65",4200);
+                MyClient = new Socket("192.168.1.65",4202);
                 System.out.println("connected to server");
                 PrintWriter pr = new PrintWriter(MyClient.getOutputStream());
                 pr.println(threadName);
@@ -39,11 +37,7 @@ public class Client implements Runnable{
 
     }
     public static void main(String [] args){
-       // Server server = new Server("server1");
-       // new Thread(server).start();
-        Client client = new Client("1");
+        Client client = new Client("3");
         new Thread(client).start();
-        Client client2 = new Client("2");
-        new Thread(client2).start();
     }
 }

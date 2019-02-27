@@ -30,7 +30,7 @@ public class Server implements Runnable{
         ServerSocket serverSocket =null;
         Socket socket1 ;
         try {
-            serverSocket = new ServerSocket(4000);
+            serverSocket = new ServerSocket(4200);
             while (true)
             {
                 socket1 = serverSocket.accept();
