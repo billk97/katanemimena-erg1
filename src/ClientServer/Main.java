@@ -5,5 +5,6 @@ public class Main {
     {
         Server t = new Server("thread1");
         new Thread(t).start();
+        
     }
 }
