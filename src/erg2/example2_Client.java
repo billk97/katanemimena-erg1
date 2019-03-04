@@ -16,7 +16,7 @@ public class example2_Client {
 		String message;
 		try {
 
-			requestSocket=new Socket(InetAddress.getByName("127.0.0.1"),4234);
+			requestSocket=new Socket(InetAddress.getByName("127.0.0.1"),4321);
 			out = new ObjectOutputStream(requestSocket.getOutputStream());
 			in = new ObjectInputStream(requestSocket.getInputStream());
 			out.writeUTF("Hi");
